@@ -1,0 +1,29 @@
+Fabio Scopel   https://www.youtube.com/watch?v=uM9o8GsO_u4
+
+1.新建一个windows service
+2.Program.cs 里main加
+    static void Main()
+        {
+#if DEBUG
+            Service1 myservice = new Service1();
+            myservice.ondebug();
+            System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite);
+
+#else
+            ServiceBase[] ServicesToRun;
+            ServicesToRun = new ServiceBase[]
+            {
+                new Service1()
+            };
+            ServiceBase.Run(ServicesToRun);
+#endif
+        }
+        
+        
+3.Service1查看代码
+public void ondebug()
+        {
+            OnStart(null);
+        }
+        
+        
