@@ -27,3 +27,6 @@ public void ondebug()
         }
         
         
+4.将c盘windows InstallUtil.exe放到目录   InstallUtil 服务名    InstallUtil /u 服务名   禁用
+  彻底删除Net Stop ServiceName
+         sc delete ServiceName
